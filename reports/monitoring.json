@@ -1,0 +1,68 @@
+{
+  "airline_live": {
+    "accuracy": 0.97,
+    "f1": 0.9657
+  },
+  "taxi_live": {
+    "rmsle": 0.2398,
+    "mae_seconds": 143.6
+  },
+  "latency_ms": {
+    "airline": {
+      "p50": 6.79,
+      "p95": 10.1,
+      "p99": 27.88
+    },
+    "taxi": {
+      "p50": 10.18,
+      "p95": 14.41,
+      "p99": 56.07
+    }
+  },
+  "monitoring_endpoint": {
+    "airline": {
+      "requests": 500,
+      "latency_ms_p50": 6.79,
+      "latency_ms_p95": 10.1,
+      "last_request": "2026-11-22T08:20:24.549784+00:00",
+      "share_predicted_satisfied": 0.438
+    },
+    "taxi": {
+      "requests": 500,
+      "latency_ms_p50": 10.18,
+      "latency_ms_p95": 14.41,
+      "last_request": "2026-11-22T08:20:33.665274+00:00",
+      "mean_predicted_minutes": 14.81
+    }
+  },
+  "psi_airline": {
+    "Age": 0.013,
+    "Flight Distance": 0.0199,
+    "Departure Delay in Minutes": 0.0094,
+    "service_mean": 0.0157,
+    "Online boarding": 0.0096,
+    "Inflight wifi service": 0.0111
+  },
+  "psi_taxi": {
+    "haversine_km": 0.0139,
+    "hour": 0.0086,
+    "weekday": 0.0098,
+    "month": 5.7753,
+    "pickup_latitude": 0.0164,
+    "passenger_count": 0.0026
+  },
+  "psi_status": {
+    "Age": "stable",
+    "Flight Distance": "stable",
+    "Departure Delay in Minutes": "stable",
+    "service_mean": "stable",
+    "Online boarding": "stable",
+    "Inflight wifi service": "stable",
+    "haversine_km": "stable",
+    "hour": "stable",
+    "weekday": "stable",
+    "month": "significant \u2014 retrain",
+    "pickup_latitude": "stable",
+    "passenger_count": "stable"
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "project": "NYC Taxi Trip Duration (regression)",
+  "eda": {
+    "rows": 1458644,
+    "cols": 11,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "duration_seconds_describe": {
+      "count": 1458644.0,
+      "mean": 959.5,
+      "std": 5237.4,
+      "min": 1.0,
+      "25%": 397.0,
+      "50%": 662.0,
+      "75%": 1075.0,
+      "max": 3526282.0
+    },
+    "trips_over_24h": 4,
+    "trips_under_60s": 8595,
+    "passenger_count_counts": {
+      "0": 60,
+      "1": 1033540,
+      "2": 210318,
+      "3": 59896,
+      "4": 28404,
+      "5": 78088,
+      "6": 48333,
+      "7": 3,
+      "8": 1,
+      "9": 1
+    }
+  },
+  "cleaning": {
+    "outside_nyc_bbox": 1211,
+    "duration_outside_60s_4h": 10504,
+    "passenger_count_not_1_to_6": 19,
+    "zero_distance_trips": 6136,
+    "speed_over_120kmh": 21,
+    "rows_kept": 1440753,
+    "rows_removed_pct": 1.23
+  },
+  "split": {
+    "train": 1008527,
+    "validation": 216113,
+    "test": 216113
+  },
+  "feature_target_correlation": {
+    "center_lat": -0.215,
+    "pickup_latitude": -0.197,
+    "dropoff_latitude": -0.168,
+    "delta_lon": -0.071,
+    "is_weekend": -0.06,
+    "pickup_cluster": -0.058,
+    "dropoff_cluster": -0.036,
+    "weekday": -0.031,
+    "delta_lat": 0.004,
+    "vendor_id": 0.005,
+    "bearing": 0.007,
+    "passenger_count": 0.014,
+    "store_and_fwd": 0.023,
+    "is_rush_hour": 0.031,
+    "minute_of_day": 0.038,
+    "hour": 0.039,
+    "month": 0.052,
+    "day_of_year": 0.053,
+    "dropoff_lga": 0.132,
+    "dropoff_jfk": 0.158,
+    "dropoff_longitude": 0.175,
+    "pickup_lga": 0.205,
+    "pickup_longitude": 0.246,
+    "pickup_jfk": 0.246,
+    "center_lon": 0.269,
+    "manhattan_km": 0.651,
+    "haversine_km": 0.667
+  },
+  "baseline": {
+    "Mean baseline": {
+      "train": {
+        "rmsle": 0.7262,
+        "r2_log": 0.0,
+        "rmse_seconds": 685.0364,
+        "mae_seconds": 442.6153,
+        "median_ae_seconds": 304.7388,
+        "r2_seconds": -0.0831
+      },
+      "validation": {
+        "rmsle": 0.7266,
+        "r2_log": -0.0,
+        "rmse_seconds": 682.4825,
+        "mae_seconds": 442.7094,
+        "median_ae_seconds": 304.7388,
+        "r2_seconds": -0.0826
+      },
+      "fit_seconds": 0.1,
+      "train_val_gap_rmsle": 0.0005
+    },
+    "Ridge Regression": {
+      "train": {
+        "rmsle": 0.5095,
+        "r2_log": 0.5088,
+        "rmse_seconds": 1014.9249,
+        "mae_seconds": 334.9658,
+        "median_ae_seconds": 191.5432,
+        "r2_seconds": -1.3551
+      },
+      "validation": {
+        "rmsle": 0.5093,
+        "r2_log": 0.5086,
+        "rmse_seconds": 853.6624,
+        "mae_seconds": 332.2713,
+        "median_ae_seconds": 191.0378,
+        "r2_seconds": -0.6938
+      },
+      "fit_seconds": 0.4,
+      "train_val_gap_rmsle": -0.0002
+    },
+    "Random Forest (200k sample)": {
+      "train": {
+        "rmsle": 0.3031,
+        "r2_log": 0.8262,
+        "rmse_seconds": 292.2054,
+        "mae_seconds": 167.1247,
+        "median_ae_seconds": 101.9376,
+        "r2_seconds": 0.8048
+      },
+      "validation": {
+        "rmsle": 0.3224,
+        "r2_log": 0.8031,
+        "rmse_seconds": 299.0012,
+        "mae_seconds": 178.3638,
+        "median_ae_seconds": 111.8485,
+        "r2_seconds": 0.7922
+      },
+      "fit_seconds": 31.4,
+      "train_val_gap_rmsle": 0.0194
+    },
+    "XGBoost": {
+      "train": {
+        "rmsle": 0.2628,
+        "r2_log": 0.8693,
+        "rmse_seconds": 260.0236,
+        "mae_seconds": 149.6209,
+        "median_ae_seconds": 92.3609,
+        "r2_seconds": 0.8454
+      },
+      "validation": {
+        "rmsle": 0.2934,
+        "r2_log": 0.837,
+        "rmse_seconds": 271.7377,
+        "mae_seconds": 159.1983,
+        "median_ae_seconds": 99.3148,
+        "r2_seconds": 0.8284
+      },
+      "fit_seconds": 16.7,
+      "train_val_gap_rmsle": 0.0306
+    },
+    "LightGBM": {
+      "train": {
+        "rmsle": 0.2683,
+        "r2_log": 0.8638,
+        "rmse_seconds": 266.2562,
+        "mae_seconds": 152.5764,
+        "median_ae_seconds": 94.4434,
+        "r2_seconds": 0.8379
+      },
+      "validation": {
+        "rmsle": 0.2927,
+        "r2_log": 0.8377,
+        "rmse_seconds": 271.8693,
+        "mae_seconds": 159.3669,
+        "median_ae_seconds": 99.4797,
+        "r2_seconds": 0.8282
+      },
+      "fit_seconds": 98.9,
+      "train_val_gap_rmsle": 0.0244
+    }
+  },
+  "tuning": {
+    "Ridge (Grid Search)": {
+      "best_params": {
+        "reg__alpha": 0.1
+      },
+      "cv_rmsle": 0.5095
+    },
+    "LightGBM (Random Search)": {
+      "best_params": {
+        "colsample_bytree": 0.578,
+        "learning_rate": 0.03349,
+        "min_child_samples": 107,
+        "n_estimators": 800,
+        "num_leaves": 435,
+        "reg_lambda": 0.25378,
+        "subsample": 0.88323,
+        "subsample_freq": 1
+      },
+      "cv_rmsle": 0.2979
+    },
+    "final_best_iteration": 4000,
+    "tuned_lightgbm_validation": {
+      "rmsle": 0.2828,
+      "r2_log": 0.8485,
+      "rmse_seconds": 262.0678,
+      "mae_seconds": 151.848,
+      "median_ae_seconds": 94.3457,
+      "r2_seconds": 0.8404
+    },
+    "tuned_lightgbm_train": {
+      "rmsle": 0.2011,
+      "r2_log": 0.9235,
+      "rmse_seconds": 222.7796,
+      "mae_seconds": 120.4043,
+      "median_ae_seconds": 71.4999,
+      "r2_seconds": 0.8865
+    }
+  },
+  "test": {
+    "rmsle": 0.2804,
+    "r2_log": 0.8508,
+    "rmse_seconds": 260.6451,
+    "mae_seconds": 151.1311,
+    "median_ae_seconds": 94.1465,
+    "r2_seconds": 0.8421
+  },
+  "feature_importance_top15": {
+    "haversine_km": 0.3195,
+    "manhattan_km": 0.2134,
+    "delta_lat": 0.081,
+    "delta_lon": 0.0725,
+    "minute_of_day": 0.0472,
+    "bearing": 0.0424,
+    "dropoff_latitude": 0.0317,
+    "center_lon": 0.0265,
+    "dropoff_longitude": 0.0232,
+    "pickup_latitude": 0.0221,
+    "hour": 0.0198,
+    "center_lat": 0.0195,
+    "weekday": 0.0191,
+    "pickup_longitude": 0.0189,
+    "day_of_year": 0.0158
+  },
+  "latency_ms_single_row": {
+    "p50": 2.89,
+    "p95": 4.29
+  },
+  "runtime_seconds": 1571.7
+}

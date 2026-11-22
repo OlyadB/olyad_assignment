@@ -1,0 +1,202 @@
+{
+  "project": "Airline Passenger Satisfaction (classification)",
+  "eda": {
+    "rows": 129880,
+    "cols": 23,
+    "missing": {
+      "Arrival Delay in Minutes": 393
+    },
+    "duplicates": 0,
+    "class_balance": {
+      "0": 0.5655,
+      "1": 0.4345
+    },
+    "top_correlations": {
+      "Online boarding": 0.502,
+      "Inflight entertainment": 0.398,
+      "Seat comfort": 0.349,
+      "On-board service": 0.322,
+      "Leg room service": 0.312,
+      "Cleanliness": 0.307
+    }
+  },
+  "cleaning": {
+    "duplicates_removed": 0,
+    "arrival_delay_imputed": 310,
+    "delay_caps_p99_5": {
+      "Departure Delay in Minutes": 233.0,
+      "Arrival Delay in Minutes": 239.0
+    }
+  },
+  "split": {
+    "train": 83123,
+    "validation": 20781,
+    "test": 25976
+  },
+  "baseline": {
+    "Logistic Regression": {
+      "train": {
+        "accuracy": 0.8969,
+        "precision": 0.8876,
+        "recall": 0.8725,
+        "f1": 0.88,
+        "roc_auc": 0.9556
+      },
+      "validation": {
+        "accuracy": 0.8965,
+        "precision": 0.8833,
+        "recall": 0.877,
+        "f1": 0.8801,
+        "roc_auc": 0.9568
+      },
+      "fit_seconds": 0.4,
+      "train_val_gap_accuracy": 0.0004
+    },
+    "Random Forest": {
+      "train": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0
+      },
+      "validation": {
+        "accuracy": 0.9609,
+        "precision": 0.9666,
+        "recall": 0.9424,
+        "f1": 0.9543,
+        "roc_auc": 0.9937
+      },
+      "fit_seconds": 2.8,
+      "train_val_gap_accuracy": 0.0391
+    },
+    "XGBoost": {
+      "train": {
+        "accuracy": 0.98,
+        "precision": 0.9877,
+        "recall": 0.9659,
+        "f1": 0.9766,
+        "roc_auc": 0.9987
+      },
+      "validation": {
+        "accuracy": 0.9638,
+        "precision": 0.968,
+        "recall": 0.9478,
+        "f1": 0.9578,
+        "roc_auc": 0.9954
+      },
+      "fit_seconds": 1.7,
+      "train_val_gap_accuracy": 0.0162
+    },
+    "LightGBM": {
+      "train": {
+        "accuracy": 0.9732,
+        "precision": 0.9833,
+        "recall": 0.9544,
+        "f1": 0.9686,
+        "roc_auc": 0.9979
+      },
+      "validation": {
+        "accuracy": 0.9648,
+        "precision": 0.9716,
+        "recall": 0.9465,
+        "f1": 0.9589,
+        "roc_auc": 0.9956
+      },
+      "fit_seconds": 3.1,
+      "train_val_gap_accuracy": 0.0084
+    }
+  },
+  "tuning": {
+    "Logistic Regression (Grid Search)": {
+      "best_params": {
+        "clf__C": 10,
+        "clf__penalty": "l2"
+      },
+      "cv_f1": 0.8797
+    },
+    "LightGBM (Random Search)": {
+      "best_params": {
+        "clf__colsample_bytree": 0.61639,
+        "clf__learning_rate": 0.01312,
+        "clf__min_child_samples": 71,
+        "clf__n_estimators": 862,
+        "clf__num_leaves": 138,
+        "clf__reg_lambda": 0.11401,
+        "clf__subsample": 0.83697,
+        "clf__subsample_freq": 1
+      },
+      "cv_f1": 0.9582
+    },
+    "tuned_lightgbm_validation": {
+      "accuracy": 0.9661,
+      "precision": 0.973,
+      "recall": 0.948,
+      "f1": 0.9603,
+      "roc_auc": 0.9958
+    },
+    "tuned_lightgbm_train": {
+      "accuracy": 0.9849,
+      "precision": 0.9928,
+      "recall": 0.9721,
+      "f1": 0.9823,
+      "roc_auc": 0.9995
+    }
+  },
+  "test": {
+    "accuracy": 0.9652,
+    "precision": 0.975,
+    "recall": 0.945,
+    "f1": 0.9598,
+    "roc_auc": 0.9956
+  },
+  "test_classification_report": {
+    "neutral/dissatisfied": {
+      "precision": 0.9579871348164031,
+      "recall": 0.9810608659850408,
+      "f1-score": 0.9693867172932841,
+      "support": 14573.0
+    },
+    "satisfied": {
+      "precision": 0.9750271444082519,
+      "recall": 0.9450144698763483,
+      "f1-score": 0.9597862391449565,
+      "support": 11403.0
+    },
+    "accuracy": 0.9652371419772098,
+    "macro avg": {
+      "precision": 0.9665071396123275,
+      "recall": 0.9630376679306946,
+      "f1-score": 0.9645864782191202,
+      "support": 25976.0
+    },
+    "weighted avg": {
+      "precision": 0.9654673946476262,
+      "recall": 0.9652371419772098,
+      "f1-score": 0.9651722788760766,
+      "support": 25976.0
+    }
+  },
+  "feature_importance_top15": {
+    "Online boarding": 0.2265,
+    "Inflight wifi service": 0.1961,
+    "Class_Business": 0.0912,
+    "Type of Travel_Personal Travel": 0.0829,
+    "service_mean": 0.0494,
+    "Customer Type_disloyal Customer": 0.0388,
+    "Inflight entertainment": 0.0379,
+    "Ease of Online booking": 0.0262,
+    "Age": 0.0232,
+    "Seat comfort": 0.0225,
+    "Baggage handling": 0.022,
+    "Checkin service": 0.0205,
+    "Leg room service": 0.0195,
+    "Gate location": 0.0179,
+    "Inflight service": 0.0177
+  },
+  "latency_ms_single_row": {
+    "p50": 4.44,
+    "p95": 6.22
+  },
+  "runtime_seconds": 274.7
+}
