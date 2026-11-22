@@ -61,14 +61,14 @@
         "roc_auc": 1.0
       },
       "validation": {
-        "accuracy": 0.9609,
-        "precision": 0.9666,
-        "recall": 0.9424,
-        "f1": 0.9543,
+        "accuracy": 0.9611,
+        "precision": 0.9669,
+        "recall": 0.9426,
+        "f1": 0.9546,
         "roc_auc": 0.9937
       },
-      "fit_seconds": 2.8,
-      "train_val_gap_accuracy": 0.0391
+      "fit_seconds": 5.0,
+      "train_val_gap_accuracy": 0.0389
     },
     "XGBoost": {
       "train": {
@@ -85,7 +85,7 @@
         "f1": 0.9578,
         "roc_auc": 0.9954
       },
-      "fit_seconds": 1.7,
+      "fit_seconds": 1.3,
       "train_val_gap_accuracy": 0.0162
     },
     "LightGBM": {
@@ -103,7 +103,7 @@
         "f1": 0.9589,
         "roc_auc": 0.9956
       },
-      "fit_seconds": 3.1,
+      "fit_seconds": 2.3,
       "train_val_gap_accuracy": 0.0084
     }
   },
@@ -195,8 +195,8 @@
     "Inflight service": 0.0177
   },
   "latency_ms_single_row": {
-    "p50": 4.44,
-    "p95": 6.22
+    "p50": 2.17,
+    "p95": 3.45
   },
-  "runtime_seconds": 274.7
+  "runtime_seconds": 382.2
 }
