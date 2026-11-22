@@ -111,48 +111,48 @@
         "median_ae_seconds": 191.0378,
         "r2_seconds": -0.6938
       },
-      "fit_seconds": 0.4,
+      "fit_seconds": 0.9,
       "train_val_gap_rmsle": -0.0002
     },
     "Random Forest (200k sample)": {
       "train": {
         "rmsle": 0.3031,
         "r2_log": 0.8262,
-        "rmse_seconds": 292.2054,
-        "mae_seconds": 167.1247,
-        "median_ae_seconds": 101.9376,
-        "r2_seconds": 0.8048
+        "rmse_seconds": 292.2479,
+        "mae_seconds": 167.1402,
+        "median_ae_seconds": 101.8632,
+        "r2_seconds": 0.8047
       },
       "validation": {
         "rmsle": 0.3224,
         "r2_log": 0.8031,
-        "rmse_seconds": 299.0012,
-        "mae_seconds": 178.3638,
-        "median_ae_seconds": 111.8485,
+        "rmse_seconds": 299.0256,
+        "mae_seconds": 178.3805,
+        "median_ae_seconds": 111.8313,
         "r2_seconds": 0.7922
       },
-      "fit_seconds": 31.4,
-      "train_val_gap_rmsle": 0.0194
+      "fit_seconds": 25.6,
+      "train_val_gap_rmsle": 0.0193
     },
     "XGBoost": {
       "train": {
-        "rmsle": 0.2628,
-        "r2_log": 0.8693,
-        "rmse_seconds": 260.0236,
-        "mae_seconds": 149.6209,
-        "median_ae_seconds": 92.3609,
-        "r2_seconds": 0.8454
+        "rmsle": 0.2632,
+        "r2_log": 0.869,
+        "rmse_seconds": 260.7249,
+        "mae_seconds": 149.8427,
+        "median_ae_seconds": 92.6774,
+        "r2_seconds": 0.8446
       },
       "validation": {
-        "rmsle": 0.2934,
-        "r2_log": 0.837,
-        "rmse_seconds": 271.7377,
-        "mae_seconds": 159.1983,
-        "median_ae_seconds": 99.3148,
-        "r2_seconds": 0.8284
+        "rmsle": 0.2935,
+        "r2_log": 0.8369,
+        "rmse_seconds": 272.1816,
+        "mae_seconds": 159.1244,
+        "median_ae_seconds": 99.3993,
+        "r2_seconds": 0.8278
       },
-      "fit_seconds": 16.7,
-      "train_val_gap_rmsle": 0.0306
+      "fit_seconds": 31.4,
+      "train_val_gap_rmsle": 0.0303
     },
     "LightGBM": {
       "train": {
@@ -171,7 +171,7 @@
         "median_ae_seconds": 99.4797,
         "r2_seconds": 0.8282
       },
-      "fit_seconds": 98.9,
+      "fit_seconds": 21.7,
       "train_val_gap_rmsle": 0.0244
     }
   },
@@ -239,8 +239,8 @@
     "day_of_year": 0.0158
   },
   "latency_ms_single_row": {
-    "p50": 2.89,
-    "p95": 4.29
+    "p50": 3.51,
+    "p95": 6.37
   },
-  "runtime_seconds": 1571.7
+  "runtime_seconds": 884.2
 }

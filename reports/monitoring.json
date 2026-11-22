@@ -9,29 +9,29 @@
   },
   "latency_ms": {
     "airline": {
-      "p50": 6.79,
-      "p95": 10.1,
-      "p99": 27.88
+      "p50": 10.21,
+      "p95": 12.5,
+      "p99": 13.75
     },
     "taxi": {
-      "p50": 10.18,
-      "p95": 14.41,
-      "p99": 56.07
+      "p50": 33.68,
+      "p95": 41.56,
+      "p99": 47.83
     }
   },
   "monitoring_endpoint": {
     "airline": {
       "requests": 500,
-      "latency_ms_p50": 6.79,
-      "latency_ms_p95": 10.1,
-      "last_request": "2026-11-22T08:20:24.549784+00:00",
+      "latency_ms_p50": 10.21,
+      "latency_ms_p95": 12.5,
+      "last_request": "2026-11-22T13:22:18.797213+00:00",
       "share_predicted_satisfied": 0.438
     },
     "taxi": {
       "requests": 500,
-      "latency_ms_p50": 10.18,
-      "latency_ms_p95": 14.41,
-      "last_request": "2026-11-22T08:20:33.665274+00:00",
+      "latency_ms_p50": 33.68,
+      "latency_ms_p95": 41.56,
+      "last_request": "2026-11-22T13:22:41.298221+00:00",
       "mean_predicted_minutes": 14.81
     }
   },
